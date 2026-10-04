@@ -1,7 +1,7 @@
 import chromium from '@sparticuz/chromium'
 import puppeteer from 'puppeteer-core'
 import { put } from '@vercel/blob'
-import { cleanWithDuckDB } from '@/lib/duckdb'
+import { cleanWithDuckDB } from '../../../lib/duckdb'
 export const dynamic='force-dynamic'
 export async function POST(req:Request){
   const {url,selectors}=await req.json()
