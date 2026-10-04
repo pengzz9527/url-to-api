@@ -1,7 +1,7 @@
 import { list, put } from '@vercel/blob'
 import chromium from '@sparticuz/chromium'
 import puppeteer from 'puppeteer-core'
-import { cleanWithDuckDB } from '@/lib/duckdb'
+import { cleanWithDuckDB } from '../../../lib/duckdb'
 export const dynamic='force-dynamic';export const maxDuration=60
 export async function GET(){
   const {blobs}=await list({prefix:'api/v2/'})
