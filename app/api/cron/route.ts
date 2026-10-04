@@ -19,7 +19,7 @@ export async function GET(){
       await browser.close()
       const {cleaned}=await cleanWithDuckDB(raw)
       const history=[...(oldDoc.history||[]),{t:Date.now(),data:cleaned}].slice(-100)
-      await put(blob.pathname,JSON.stringify({...oldDoc,current:cleaned,raw,history,updated_at:new Date().toISOString()}),{access:'public',allowOverwrite:true})
+      await put(blob.pathname,JSON.stringify({...oldDoc,current:cleaned,raw,history,updated_at:new Date().toISOString()}),{access:'public'})
       results.push({id:oldDoc.id,ok:true})
     }catch(e:any){results.push({id:blob.pathname,ok:false})}
   }
